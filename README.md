@@ -7,7 +7,7 @@ For example:
 #!/usr/bin/php
 <?php
 
-include 'Console.php';
+include __DIR__.'/Console.php';
 
 $console = new Console();
 
