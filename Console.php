@@ -1,40 +1,33 @@
 <?php
 
-include 'Colors.php';
+include __DIR__ . '/Colors.php';
 
 /**
  *
  */
-class Console
+class Console extends Colors
 {
-  private $colors;
-
-  public function __construct()
-  {
-    $this->colors =  new Colors();
-  }
-
   public function info($message = '')
   {
-    echo $this->colors->getColoredString("[INFO]", "white") .' ' . $message . "\n";
+    echo $this->getColoredString("[INFO]", "light_blue") .' ' . $message . "\n";
   }
 
   public function warn($message = '')
   {
-    echo $this->colors->getColoredString("[WARNING]", "yellow") .' ' . $message . "\n";
+    echo $this->getColoredString("[WARNING]", "yellow") .' ' . $message . "\n";
   }
 
   public function error($message = '')
   {
-    echo $this->colors->getColoredString("[ERROR]", "red") .' ' . $message . "\n";
+    echo $this->getColoredString("[ERROR]", "light_red") .' ' . $message . "\n";
+  }
+
+  public function success($message = '')
+  {
+    echo $this->getColoredString("[SUCCESS]", "light_green") .' ' . $message . "\n";
   }
 
   public function line($message = '')
-  {
-    echo $message;
-  }
-
-  public function lineln($message = '')
   {
     echo $message. "\n";
   }
